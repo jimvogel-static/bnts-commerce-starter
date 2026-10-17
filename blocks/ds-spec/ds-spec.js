@@ -185,7 +185,7 @@ export default function decorate(block) {
   }
 
   if (text('demo') === 'session') {
-    // Prepare the demo: real drop-in APIs against the in-browser demo data.
+    // Prepare the demo: real drop-in APIs against the ACCS sandbox.
     const wrap = el('p', 'ds-spec-demo');
     const status = el('span', 'ds-spec-status');
     const reloadFrames = () => document.querySelectorAll('.ds-stage iframe').forEach((f) => {
@@ -194,16 +194,10 @@ export default function decorate(block) {
     });
     const signedIn = () => /auth_dropin_user_token=/.test(document.cookie);
     const setStatus = () => {
-      status.textContent = signedIn() ? 'Signed in as the demo customer.' : 'Signed out.';
+      status.textContent = signedIn() ? 'Signed in.' : 'Signed out.';
     };
-    const signBtn = el('button', 'button primary', 'Sign in as the demo customer');
-    signBtn.type = 'button';
-    signBtn.addEventListener('click', async () => {
-      const auth = await import('@dropins/storefront-auth/api.js');
-      await auth.getCustomerToken({ email: 'avery@example.com', password: 'Demo1234!' });
-      setStatus();
-      reloadFrames();
-    });
+    const signBtn = el('a', 'button primary', signedIn() ? 'My account' : 'Sign in or create an account');
+    signBtn.href = signedIn() ? '/customer/account' : '/customer/login';
     const cartBtn = el('button', 'button secondary', 'Add sample items to the cart');
     cartBtn.type = 'button';
     cartBtn.addEventListener('click', async () => {
