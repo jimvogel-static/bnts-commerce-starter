@@ -1,0 +1,124 @@
+/* Form (AEM Block Collection, marked deprecated there), styled with drop-in design tokens. */
+.form { max-width: 640px; }
+.form [aria-hidden='true'] { display: none; }
+
+.form input,
+.form textarea,
+.form select,
+.form button {
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+  font: var(--type-body-1-default-font);
+}
+
+.form input,
+.form textarea,
+.form select {
+  scroll-margin: 1em;
+  width: 100%;
+  border: 1px solid var(--color-neutral-600);
+  border-radius: var(--shape-border-radius-1);
+  padding: var(--spacing-xsmall) var(--spacing-small);
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+}
+
+.form textarea { resize: vertical; }
+.form fieldset { appearance: none; margin: 0; border: 0; padding: 0; background-color: transparent; }
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--color-button-focus);
+  box-shadow: 0 0 0 1px var(--color-button-focus);
+}
+
+.form input:disabled,
+.form textarea:disabled,
+.form select:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-600); }
+
+.form input[type='checkbox'],
+.form input[type='radio'] { width: unset; accent-color: var(--color-brand-500); }
+
+.form label,
+.form legend { display: block; }
+
+.form label[data-required]::after,
+.form legend[data-required]::after { content: '*'; margin-left: 0.25ch; color: var(--color-alert-500); }
+
+.form .form-field > label:first-child,
+.form .form-field > legend { margin-bottom: var(--spacing-xxsmall); font: var(--type-body-2-strong-font); color: var(--color-neutral-800); }
+
+.form .form-field + .form-field { margin-top: var(--spacing-small); }
+
+.form .form-field.checkbox-field label,
+.form .form-field.radio-field label {
+  position: relative;
+  padding-left: calc(1em + 1ch);
+  font: var(--type-body-2-default-font);
+  line-height: 44px;
+  cursor: pointer;
+}
+
+.form .form-field.checkbox-field label input,
+.form .form-field.radio-field label input,
+.form .form-field.toggle-field label input {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .form .form-field.checkbox-field,
+  .form .form-field.radio-field { display: flex; flex-wrap: wrap; gap: 0.25ch 1em; }
+}
+
+.form .form-field.toggle-field label {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1ch;
+  min-height: 44px;
+}
+
+.form .form-field.toggle-field label input { width: 2em; opacity: 0; }
+
+.form .form-field.toggle-field label span {
+  position: relative;
+  width: calc(2em + 2px);
+  height: calc(1em + 2px);
+  border-radius: 1em;
+  background-color: var(--color-neutral-500);
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.form .form-field.toggle-field label span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: var(--color-neutral-50);
+  transition: left 0.2s;
+}
+
+.form .form-field.toggle-field label input:checked + span { background-color: var(--color-brand-500); }
+.form .form-field.toggle-field label input:checked + span::after { left: calc(100% - 1em - 1px); }
+
+.form .field-help-text { margin-top: var(--spacing-xxsmall); color: var(--color-neutral-700); font: var(--type-details-caption-1-font); }
+
+.form .button-wrapper { display: flex; flex-wrap: wrap; gap: var(--spacing-xsmall); margin-top: var(--spacing-medium); }
+.form .button-wrapper button { width: max-content; }
+.form .bnts-form-demo-note { margin-top: var(--spacing-small); font: var(--type-body-2-strong-font); color: var(--color-positive-800); }
