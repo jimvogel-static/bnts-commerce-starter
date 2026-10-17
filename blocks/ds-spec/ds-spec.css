@@ -19,6 +19,7 @@ main .section.ds-section.hero-container { background: transparent; }
 
 .ds-spec[data-kind='dropin'] { border-left-color: var(--ds-purple); }
 .ds-spec[data-kind='arc'] { border-left-color: var(--ds-coral); }
+.ds-spec[data-kind='collection'] { border-left-color: #26dfec; }
 
 .ds-spec-head {
   display: flex;
@@ -46,6 +47,7 @@ main .section.ds-section.hero-container { background: transparent; }
 .ds-chip-block { background: #e6f5ff; color: #0b5c8a; }
 .ds-chip-dropin { background: #f1e8ff; color: #5a1fc2; }
 .ds-chip-arc { background: #ffe9ea; color: #b3202a; }
+.ds-chip-collection { background: #dcfafc; color: #0b6b72; }
 
 .ds-spec-code,
 .ds-spec .ds-mono {

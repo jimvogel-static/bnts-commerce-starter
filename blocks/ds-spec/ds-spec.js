@@ -30,6 +30,7 @@ const KIND_CLASS = {
   'content rule': 'block',
   foundation: 'block',
   'commerce drop-in': 'dropin',
+  'block collection': 'collection',
   'drop-in ui kit': 'dropin',
   'added for the prototype': 'arc',
 };
