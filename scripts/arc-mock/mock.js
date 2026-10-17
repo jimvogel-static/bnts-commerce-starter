@@ -158,7 +158,7 @@ function buildTopbar() {
   bar.className = 'pulse-topbar';
   const msg = document.createElement('span');
   msg.className = 'pulse-topbar__msg';
-  msg.textContent = 'BNTS Commerce Starter: Adobe Commerce boilerplate + 7 Block Collection blocks · demo data, no real orders · try code PULSE20';
+  msg.textContent = 'BNTS Commerce Starter: Adobe Commerce boilerplate + 6 Block Collection blocks · demo data, no real orders · try code PULSE20';
   const tools = document.createElement('span');
   tools.className = 'pulse-topbar__tools';
   [
