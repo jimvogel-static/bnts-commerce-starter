@@ -1,20 +1,19 @@
 {
   "public": {
     "default": {
-      "commerce-core-endpoint": "https://arc-mock.bounteous.invalid/graphql",
-      "commerce-endpoint": "https://arc-mock.bounteous.invalid/cs-graphql",
+      "commerce-core-endpoint": "https://na1-sandbox.api.commerce.adobe.com/KQRrqQbeeQwBx9zuYJ1rH9/graphql",
+      "commerce-endpoint": "https://na1-sandbox.api.commerce.adobe.com/KQRrqQbeeQwBx9zuYJ1rH9/graphql",
       "commerce-assets-enabled": false,
       "commerce-free-gifts-enabled": false,
       "headers": {
         "all": {
-          "Store": "default"
+          "Store": "pulse"
         },
         "cs": {
-          "Magento-Store-Code": "main_website_store",
-          "Magento-Store-View-Code": "default",
-          "Magento-Website-Code": "base",
-          "x-api-key": "arc-prototype-not-a-real-key",
-          "Magento-Environment-Id": "arc-prototype"
+          "Magento-Customer-Group": "b6589fc6ab0dc82cf12099d1c2d40ab994e8410c",
+          "Magento-Store-Code": "pulse_store",
+          "Magento-Store-View-Code": "pulse",
+          "Magento-Website-Code": "pulse"
         }
       },
       "analytics": {
@@ -22,17 +21,17 @@
         "aep-datastream-id": null,
         "base-currency-code": "USD",
         "environment": "Testing",
-        "environment-id": "arc-prototype",
-        "store-code": "main_website_store",
-        "store-id": 1,
-        "store-name": "Bounteous ARC Store",
-        "store-url": "https://arc.example",
-        "store-view-code": "default",
-        "store-view-id": 1,
-        "store-view-name": "Default Store View",
-        "website-code": "base",
-        "website-id": 1,
-        "website-name": "Main Website"
+        "environment-id": "KQRrqQbeeQwBx9zuYJ1rH9",
+        "store-code": "pulse_store",
+        "store-id": 5,
+        "store-name": "Pulse Store",
+        "store-url": "https://main--arc-storefront--jimvogel-static.aem.page",
+        "store-view-code": "pulse",
+        "store-view-id": 5,
+        "store-view-name": "Pulse",
+        "website-code": "pulse",
+        "website-id": 3,
+        "website-name": "Pulse"
       },
       "plugins": {
         "picker": {
