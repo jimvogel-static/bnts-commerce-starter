@@ -6,7 +6,7 @@
  */
 
 // Which build this is, shown in the X-ray panel.
-const SITE = { label: 'BNTS Commerce Starter: Adobe boilerplate + 7 Block Collection blocks', color: '#26DFEC' };
+const SITE = { label: 'BNTS Commerce Starter: Adobe boilerplate + 6 Block Collection blocks', color: '#26DFEC' };
 const COLORS = {
   boilerplate: '#34B3FF', // Electric Blue: stock boilerplate block
   arc: '#FF4F59', // Coral: added for this prototype (blocks and custom touches)
@@ -28,7 +28,6 @@ const BLOCKS = {
   embed: { kind: 'collection', label: 'Embed', note: 'AEM Block Collection, added in the BNTS Commerce Starter' },
   video: { kind: 'collection', label: 'Video', note: 'AEM Block Collection, added in the BNTS Commerce Starter' },
   search: { kind: 'collection', label: 'Search (site content)', note: 'AEM Block Collection, added in the BNTS Commerce Starter' },
-  breadcrumbs: { kind: 'collection', label: 'Breadcrumbs', note: 'Block Collection add-on pattern, built for the BNTS Commerce Starter' },
   hero: { kind: 'boilerplate', label: 'Hero' },
   cards: { kind: 'boilerplate', label: 'Cards' },
   columns: { kind: 'boilerplate', label: 'Columns' },
