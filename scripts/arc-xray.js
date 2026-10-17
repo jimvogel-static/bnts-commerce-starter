@@ -5,6 +5,8 @@
  * nothing about the boilerplate's own markup or behavior.
  */
 
+// Which build this is, shown in the X-ray panel.
+const SITE = { label: 'BNTS Commerce Starter: Adobe boilerplate + 7 Block Collection blocks', color: '#26DFEC' };
 const COLORS = {
   boilerplate: '#34B3FF', // Electric Blue: stock boilerplate block
   arc: '#FF4F59', // Coral: added for this prototype (blocks and custom touches)
@@ -26,7 +28,6 @@ const BLOCKS = {
   embed: { kind: 'collection', label: 'Embed', note: 'AEM Block Collection, added in the BNTS Commerce Starter' },
   video: { kind: 'collection', label: 'Video', note: 'AEM Block Collection, added in the BNTS Commerce Starter' },
   search: { kind: 'collection', label: 'Search (site content)', note: 'AEM Block Collection, added in the BNTS Commerce Starter' },
-  form: { kind: 'collection', label: 'Form', note: 'AEM Block Collection (marked deprecated there), added in the BNTS Commerce Starter' },
   breadcrumbs: { kind: 'collection', label: 'Breadcrumbs', note: 'Block Collection add-on pattern, built for the BNTS Commerce Starter' },
   hero: { kind: 'boilerplate', label: 'Hero' },
   cards: { kind: 'boilerplate', label: 'Cards' },
@@ -145,7 +146,7 @@ function draw() {
     const side = name === 'header' ? 'right:6px;top:calc(100% + 4px);' : 'left:6px;top:6px;';
     const tag = el('div', `position:absolute;${side}max-width:min(420px, calc(100% - 12px));padding:6px 10px;border-radius:12px;`
       + 'background:#0B111C;color:#fff;font:600 12px/1.35 \'Nunito Sans\',system-ui,sans-serif;box-shadow:0 4px 16px rgb(0 0 0 / 25%);');
-    const title = el('div', `color:${color};letter-spacing:.04em;text-transform:uppercase;font-size:10px;`, info.kind === 'arc' ? (info.custom ? 'Custom touch' : 'Added for the prototype') : (info.kind === 'collection' ? 'Block Collection (BNTS Starter)' : 'Boilerplate block'));
+    const title = el('div', `color:${color};letter-spacing:.04em;text-transform:uppercase;font-size:10px;`, info.kind === 'arc' ? (info.custom ? 'Custom touch' : 'Added for the prototype') : (info.kind === 'collection' ? 'BNTS Starter addition · Block Collection' : 'Boilerplate block'));
     tag.append(title, el('div', 'font-size:13px;', info.custom ? info.label : `${info.label}  ·  ${name}`));
     if (info.note) tag.append(el('div', 'font-weight:400;opacity:.8;', info.note));
     const live = (name === 'header' || info.custom) ? null : dropinsFor(name);
@@ -188,13 +189,14 @@ function panel() {
   }
   p.append(el('div', 'font-weight:700;font-size:17px;margin:2px 0 4px;', tpl));
   p.append(el('div', 'opacity:.8;', tplNote));
+  p.append(el('div', `margin-top:8px;padding:6px 10px;border-radius:10px;background:${SITE.color}22;color:${SITE.color};font-weight:700;`, SITE.label));
   p.append(el('div', 'margin-top:10px;', `Document: ${window.location.pathname.startsWith('/products/') ? '/products/default' : window.location.pathname}`));
   p.append(el('div', '', `Blocks on page: ${blocks.length} (${colCount} from the Block Collection, ${arcCount} added for the prototype)`));
   p.append(el('div', '', `Drop-ins in use: ${[...dropins].join(', ') || 'none'}`));
   p.append(el('div', 'margin-top:10px;opacity:.8;', document.documentElement.classList.contains('look-elevated') ? 'Look: Elevated. Same stock blocks and drop-ins, restyled by one extra stylesheet, plus a few custom touches (coral). Data: in-browser demo mock.' : 'Look: Boilerplate. Bounteous theme applied to the boilerplate design tokens (one stylesheet). Data: in-browser demo mock.'));
 
   const legend = el('div', 'display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:12px;');
-  [['Boilerplate block', COLORS.boilerplate], ['Block Collection', COLORS.collection], ['Added / custom', COLORS.arc], ['Commerce drop-ins', COLORS.dropin]].forEach(([t, c]) => {
+  [['Adobe boilerplate', COLORS.boilerplate], ['BNTS addition', COLORS.collection], ['Added / custom', COLORS.arc], ['Commerce drop-ins', COLORS.dropin]].forEach(([t, c]) => {
     const i = el('span', '');
     i.append(el('span', `display:inline-block;width:10px;height:10px;border-radius:3px;background:${c};margin-right:6px;vertical-align:middle;`), document.createTextNode(t));
     legend.append(i);
