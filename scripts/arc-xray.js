@@ -192,7 +192,7 @@ function panel() {
   p.append(el('div', 'margin-top:10px;', `Document: ${window.location.pathname.startsWith('/products/') ? '/products/default' : window.location.pathname}`));
   p.append(el('div', '', `Blocks on page: ${blocks.length} (${colCount} from the Block Collection, ${arcCount} added for the prototype)`));
   p.append(el('div', '', `Drop-ins in use: ${[...dropins].join(', ') || 'none'}`));
-  p.append(el('div', 'margin-top:10px;opacity:.8;', document.documentElement.classList.contains('look-elevated') ? 'Look: Elevated. Same stock blocks and drop-ins, restyled by one extra stylesheet, plus a few custom touches (coral). Data: in-browser demo mock.' : 'Look: Boilerplate. Bounteous theme applied to the boilerplate design tokens (one stylesheet). Data: in-browser demo mock.'));
+  p.append(el('div', 'margin-top:10px;opacity:.8;', document.documentElement.classList.contains('look-elevated') ? 'Look: Elevated. Same stock blocks and drop-ins, restyled by one extra stylesheet, plus a few custom touches (coral). Data: Adobe Commerce as a Cloud Service sandbox (Pulse store view).' : 'Look: Boilerplate. Bounteous theme applied to the boilerplate design tokens (one stylesheet). Data: Adobe Commerce as a Cloud Service sandbox (Pulse store view).'));
 
   const legend = el('div', 'display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:12px;');
   [['Adobe boilerplate', COLORS.boilerplate], ['BNTS addition', COLORS.collection], ['Added / custom', COLORS.arc], ['Commerce drop-ins', COLORS.dropin]].forEach(([t, c]) => {
