@@ -17,13 +17,13 @@
         }
       },
       "analytics": {
-        "aep-ims-org-id": null,
-        "aep-datastream-id": null,
+        "aep-ims-org-id": "0B96B03459707BE40A495C70@AdobeOrg",
+        "aep-datastream-id": "ca582755-ddaf-430d-bc8f-428538251b16",
         "base-currency-code": "USD",
         "environment": "Testing",
         "environment-id": "KQRrqQbeeQwBx9zuYJ1rH9",
         "store-code": "pulse_store",
-        "store-id": 5,
+        "store-id": 3,
         "store-name": "Pulse Store",
         "store-url": "https://main--arc-storefront--jimvogel-static.aem.page",
         "store-view-code": "pulse",
